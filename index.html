@@ -3,14 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>金绣香韵 - 官方网站</title>
+    <title>金绣香韵 - V5.0 AI功能版</title>
     <meta name="description" content="发现生活中的匠心之美。探索金绣香韵的文创产品、伴手礼和特色设计。">
     <!-- 引入Contentful的官方SDK -->
     <script src="https://unpkg.com/contentful@latest/dist/contentful.browser.min.js"></script>
     <!-- 引入Contentful富文本HTML渲染器 -->
     <script src="https://unpkg.com/@contentful/rich-text-html-renderer@latest/dist/rich-text-html-renderer.browser.min.js"></script>
     <style>
-        :root{--primary-color:#FF7A59;--text-color:#333;--text-light:#666;--bg-color:#F8F9FA;--card-bg:#fff;--border-color:#E5E5E5;--header-height:70px}*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background-color:var(--bg-color);color:var(--text-color);line-height:1.6}body.mobile-nav-active{overflow:hidden}.container{width:100%;max-width:1200px;margin:0 auto;padding:0 15px}h1,h2,h3{line-height:1.2;margin-bottom:10px;font-weight:600}img{max-width:100%;height:auto;display:block}.section{padding:60px 0;display:block}.section.hidden{display:none}.section-separator{border-bottom:1px solid var(--border-color)}.section-title{text-align:center;font-size:2.2em;margin-bottom:15px}.section-subtitle{text-align:center;font-size:1.1em;color:var(--text-light);margin-bottom:50px;max-width:600px;margin-left:auto;margin-right:auto}.main-header{background-color:var(--card-bg);padding:0 15px;height:var(--header-height);box-shadow:0 2px 4px rgba(0,0,0,.05);position:sticky;top:0;z-index:1000;display:flex;align-items:center}.main-header .container{display:flex;justify-content:space-between;align-items:center}.logo{font-size:1.5em;font-weight:bold;color:var(--primary-color);text-decoration:none}.main-nav a{color:var(--text-color);text-decoration:none;margin-left:20px;font-weight:500;transition:color .3s}.main-nav a:hover{color:var(--primary-color)}.btn{display:inline-block;padding:12px 25px;border-radius:8px;text-decoration:none;font-weight:bold;text-align:center;cursor:pointer;transition:all .3s ease;border:1px solid transparent}.btn-primary{background-color:var(--primary-color);color:#fff;border-color:var(--primary-color)}.btn-primary:hover{background-color:#e66a4f;border-color:#e66a4f;transform:translateY(-2px)}.btn-secondary{background-color:var(--card-bg);color:var(--text-color);border-color:var(--border-color)}.btn-secondary:hover{background-color:var(--bg-color);border-color:#ccc}.hero{background:linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)),url(https://images.unsplash.com/photo-1593113646773-69316952a58c?q=80&w=2070&auto=format&fit=crop) no-repeat center center/cover;color:#fff;text-align:center;padding:120px 20px}.hero h1{font-size:3.2em;margin-bottom:20px;text-shadow:1px 1px 3px rgba(0,0,0,.4)}.hero p{font-size:1.3em;margin-bottom:30px}.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:30px}.product-card{background-color:var(--card-bg);border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,.05);overflow:hidden;transition:transform .3s ease,box-shadow .3s ease;display:flex;flex-direction:column;cursor:pointer}.product-card:hover{transform:translateY(-5px);box-shadow:0 8px 25px rgba(0,0,0,.1)}.product-card-image-wrapper{width:100%;height:250px;overflow:hidden}.product-card-image{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}.product-card:hover .product-card-image{transform:scale(1.05)}.product-card-content{padding:20px;flex-grow:1;display:flex;flex-direction:column}.product-card h3{font-size:1.2em;margin-bottom:10px}.product-card-price{font-size:1.4em;font-weight:bold;color:var(--primary-color);margin-top:auto}#featured-products{background-color:#fff}.product-detail-layout{display:grid;grid-template-columns:1fr;gap:40px}.product-image-gallery img{border-radius:12px}.product-info h1{font-size:2.8em}.product-price{font-size:2.2em;font-weight:bold;color:var(--primary-color);margin:20px 0}.product-description,.product-specs{margin-bottom:30px}.product-specs ul{list-style:none;padding:0}.product-specs li{padding:10px 0;border-bottom:1px solid var(--border-color);display:flex}.product-specs li:last-child{border-bottom:none}.product-specs strong{display:inline-block;width:80px;color:var(--text-light);flex-shrink:0}.product-actions{margin-top:30px;display:flex;gap:15px;align-items:center}.share-icon-wrapper{margin-left:auto;cursor:pointer;padding:10px;border-radius:50%;transition:background-color .3s}.share-icon-wrapper:hover{background-color:var(--bg-color)}.share-icon-wrapper svg{width:24px;height:24px;stroke:var(--text-light)}.contact-card{background-color:var(--card-bg);padding:50px;border-radius:12px;max-width:600px;margin:0 auto;text-align:center;box-shadow:0 4px 15px rgba(0,0,0,.05)}.contact-card h3{font-size:1.4em;margin-bottom:15px}.contact-card p{margin-bottom:25px;font-size:1.1em;color:var(--text-light)}.contact-details span{display:block;margin-bottom:10px;font-size:1.2em}.hamburger-menu{display:none;width:30px;height:24px;position:relative;background:0 0;border:none;cursor:pointer;z-index:1002}.hamburger-menu span{display:block;width:100%;height:3px;background-color:var(--text-color);border-radius:3px;position:absolute;left:0;transition:all .35s ease-in-out}.hamburger-menu span:first-child{top:0}.hamburger-menu span:nth-child(2){top:50%;transform:translateY(-50%)}.hamburger-menu span:nth-child(3){bottom:0}.hamburger-menu.active span:first-child{top:50%;transform:translateY(-50%) rotate(45deg)}.hamburger-menu.active span:nth-child(2){opacity:0}.hamburger-menu.active span:nth-child(3){bottom:50%;transform:translateY(50%) rotate(-45deg)}.mobile-nav-menu{display:none}#loader{text-align:center;padding:50px;font-size:1.2em;color:var(--text-light)}.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background-color:rgba(0,0,0,.7);color:#fff;padding:10px 20px;border-radius:20px;z-index:2000;opacity:0;transition:opacity .3s ease;pointer-events:none}@media (min-width:768px){.product-detail-layout{grid-template-columns:1fr 1.2fr;gap:60px;align-items:flex-start}}@media (max-width:767px){.hero h1{font-size:2.5em}.section-title{font-size:1.8em}.main-nav{display:none}.main-header .container::after{content:'☰';font-size:1.8em;cursor:pointer;display:none}.hamburger-menu{display:block}.mobile-nav-menu{position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(255,255,255,.98);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);display:flex;justify-content:center;align-items:center;opacity:0;visibility:hidden;transform:translateY(-20px);transition:opacity .4s ease,visibility .4s ease,transform .4s ease;z-index:1001}.mobile-nav-menu.active{opacity:1;visibility:visible;transform:translateY(0)}.mobile-nav-menu .main-nav{display:flex;flex-direction:column;align-items:center}.mobile-nav-menu .main-nav a{margin:20px 0;font-size:1.8em;color:var(--text-color)}}
+        /* --- V5.0 视觉样式 --- */
+        :root{--primary-color:#FF7A59;--text-color:#333;--text-light:#666;--bg-color:#F8F9FA;--card-bg:#fff;--border-color:#E5E5E5;--header-height:70px}*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background-color:var(--bg-color);color:var(--text-color);line-height:1.6}body.mobile-nav-active,body.modal-open{overflow:hidden}.container{width:100%;max-width:1200px;margin:0 auto;padding:0 15px}h1,h2,h3{line-height:1.2;margin-bottom:10px;font-weight:600}img{max-width:100%;height:auto;display:block}.section{padding:60px 0;display:block}.section.hidden{display:none}.section-separator{border-bottom:1px solid var(--border-color)}.section-title{text-align:center;font-size:2.2em;margin-bottom:15px}.section-subtitle{text-align:center;font-size:1.1em;color:var(--text-light);margin-bottom:50px;max-width:600px;margin-left:auto;margin-right:auto}.main-header{background-color:var(--card-bg);padding:0 15px;height:var(--header-height);box-shadow:0 2px 4px rgba(0,0,0,.05);position:sticky;top:0;z-index:1000;display:flex;align-items:center}.main-header .container{display:flex;justify-content:space-between;align-items:center}.logo{font-size:1.5em;font-weight:bold;color:var(--primary-color);text-decoration:none}.main-nav a{color:var(--text-color);text-decoration:none;margin-left:20px;font-weight:500;transition:color .3s}.main-nav a:hover{color:var(--primary-color)}.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 25px;border-radius:8px;text-decoration:none;font-weight:bold;text-align:center;cursor:pointer;transition:all .3s ease;border:1px solid transparent}.btn-primary{background-color:var(--primary-color);color:#fff;border-color:var(--primary-color)}.btn-primary:hover{background-color:#e66a4f;border-color:#e66a4f;transform:translateY(-2px)}.btn-secondary{background-color:var(--card-bg);color:var(--text-color);border-color:var(--border-color)}.btn-secondary:hover{background-color:var(--bg-color);border-color:#ccc}.hero{background:linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)),url(https://images.unsplash.com/photo-1593113646773-69316952a58c?q=80&w=2070&auto=format&fit=crop) no-repeat center center/cover;color:#fff;text-align:center;padding:120px 20px}.hero h1{font-size:3.2em;margin-bottom:20px;text-shadow:1px 1px 3px rgba(0,0,0,.4)}.hero p{font-size:1.3em;margin-bottom:30px}.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:30px}.product-card{background-color:var(--card-bg);border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,.05);overflow:hidden;transition:transform .3s ease,box-shadow .3s ease;display:flex;flex-direction:column;cursor:pointer}.product-card:hover{transform:translateY(-5px);box-shadow:0 8px 25px rgba(0,0,0,.1)}.product-card-image-wrapper{width:100%;height:250px;overflow:hidden}.product-card-image{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}.product-card:hover .product-card-image{transform:scale(1.05)}.product-card-content{padding:20px;flex-grow:1;display:flex;flex-direction:column}.product-card h3{font-size:1.2em;margin-bottom:10px}.product-card-price{font-size:1.4em;font-weight:bold;color:var(--primary-color);margin-top:auto}#featured-products{background-color:#fff}.product-detail-layout{display:grid;grid-template-columns:1fr;gap:40px}@media (min-width:768px){.product-detail-layout{grid-template-columns:1fr 1.2fr;gap:60px;align-items:flex-start}}
+        .product-gallery{position:relative;overflow:hidden;border-radius:12px}.gallery-main-image{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;background-color:var(--bg-color)}.gallery-controls{position:absolute;top:50%;left:10px;right:10px;display:flex;justify-content:space-between;transform:translateY(-50%)}.gallery-control{background-color:rgba(255,255,255,.8);border:none;border-radius:50%;width:40px;height:40px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 5px rgba(0,0,0,.1);transition:transform .2s ease}.gallery-control:hover{transform:scale(1.1)}.gallery-control svg{width:24px;height:24px}.gallery-thumbnails{display:flex;gap:10px;margin-top:10px;overflow-x:auto;padding:5px}.gallery-thumbnail{width:60px;height:60px;object-fit:cover;border-radius:8px;cursor:pointer;border:2px solid transparent;transition:border-color .3s}.gallery-thumbnail.active{border-color:var(--primary-color)}
+        .product-info h1{font-size:2.8em}.product-price{font-size:2.2em;font-weight:bold;color:var(--primary-color);margin:20px 0}.product-description,.product-specs{margin-bottom:30px}.product-specs ul{list-style:none;padding:0}.product-specs li{padding:10px 0;border-bottom:1px solid var(--border-color);display:flex}.product-specs li:last-child{border-bottom:none}.product-specs strong{display:inline-block;width:80px;color:var(--text-light);flex-shrink:0}.product-actions{margin-top:30px;display:flex;flex-wrap:wrap;gap:15px;align-items:center}.share-icon-wrapper{margin-left:auto;cursor:pointer;padding:10px;border-radius:50%;transition:background-color .3s}.share-icon-wrapper:hover{background-color:var(--bg-color)}.share-icon-wrapper svg{width:24px;height:24px;stroke:var(--text-light)}.contact-card{background-color:var(--card-bg);padding:50px;border-radius:12px;max-width:600px;margin:0 auto;text-align:center;box-shadow:0 4px 15px rgba(0,0,0,.05)}.contact-card h3{font-size:1.4em;margin-bottom:15px}.contact-card p{margin-bottom:25px;font-size:1.1em;color:var(--text-light)}.contact-details span{display:block;margin-bottom:10px;font-size:1.2em}.hamburger-menu{display:none;width:30px;height:24px;position:relative;background:0 0;border:none;cursor:pointer;z-index:1002}.hamburger-menu span{display:block;width:100%;height:3px;background-color:var(--text-color);border-radius:3px;position:absolute;left:0;transition:all .35s ease-in-out}.hamburger-menu span:first-child{top:0}.hamburger-menu span:nth-child(2){top:50%;transform:translateY(-50%)}.hamburger-menu span:nth-child(3){bottom:0}.hamburger-menu.active span:first-child{top:50%;transform:translateY(-50%) rotate(45deg)}.hamburger-menu.active span:nth-child(2){opacity:0}.hamburger-menu.active span:nth-child(3){bottom:50%;transform:translateY(50%) rotate(-45deg)}.mobile-nav-menu{display:none}#loader{text-align:center;padding:50px;font-size:1.2em;color:var(--text-light)}.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background-color:rgba(0,0,0,.7);color:#fff;padding:10px 20px;border-radius:20px;z-index:2000;opacity:0;transition:opacity .3s ease;pointer-events:none}
+        /* --- [V5.0 新增] AI助手模态框样式 --- */
+        .modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;z-index:2000;opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease}.modal-overlay.active{opacity:1;visibility:visible}.modal-content{background-color:var(--card-bg);padding:30px;border-radius:12px;max-width:500px;width:90%;box-shadow:0 10px 30px rgba(0,0,0,.1);position:relative;transform:scale(.9);transition:transform .3s ease}.modal-overlay.active .modal-content{transform:scale(1)}.modal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;border-bottom:1px solid var(--border-color);padding-bottom:15px}.modal-title{font-size:1.5em;color:var(--primary-color)}.modal-close{background:0 0;border:none;font-size:2em;cursor:pointer;color:var(--text-light);line-height:1}.modal-body{max-height:60vh;overflow-y:auto}.ai-suggestion h4{margin-top:20px;margin-bottom:10px;font-size:1.1em}.ai-suggestion p,.ai-suggestion ul{color:var(--text-light);font-size:.95em}.ai-suggestion ul{padding-left:20px}.ai-suggestion li{margin-bottom:5px}.ai-loader{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:150px;color:var(--text-light)}.spinner{width:40px;height:40px;border:4px solid var(--bg-color);border-top-color:var(--primary-color);border-radius:50%;animation:spin 1s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+        @media (max-width:767px){.hero h1{font-size:2.5em}.section-title{font-size:1.8em}.main-nav{display:none}.main-header .container::after{content:'☰';font-size:1.8em;cursor:pointer;display:none}.hamburger-menu{display:block}.mobile-nav-menu{position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(255,255,255,.98);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);display:flex;justify-content:center;align-items:center;opacity:0;visibility:hidden;transform:translateY(-20px);transition:opacity .4s ease,visibility .4s ease,transform .4s ease;z-index:1001}.mobile-nav-menu.active{opacity:1;visibility:visible;transform:translateY(0)}.mobile-nav-menu .main-nav{display:flex;flex-direction:column;align-items:center}.mobile-nav-menu .main-nav a{margin:20px 0;font-size:1.8em;color:var(--text-color)}}
     </style>
 </head>
 <body>
@@ -86,8 +92,20 @@
     <!-- 全局提示框 -->
     <div id="toast" class="toast"></div>
 
+    <!-- [V5.0 新增] AI助手模态框 -->
+    <div id="ai-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">✨ AI送礼助手</h3>
+                <button class="modal-close" aria-label="关闭">&times;</button>
+            </div>
+            <div id="ai-modal-body" class="modal-body">
+                <!-- AI生成内容将注入这里 -->
+            </div>
+        </div>
+    </div>
+
     <script>
-    // 代码已经过审查，确认不包含任何Google服务，可在中国大陆地区正常使用。
     document.addEventListener('DOMContentLoaded', function() {
         // --- 全局变量和配置 ---
         const SPACE_ID = 'sy9dkt0pwksf';
@@ -105,18 +123,17 @@
         const hamburgerMenu = document.querySelector('.hamburger-menu');
         const mobileNav = document.querySelector('.mobile-nav-menu');
         const desktopNavLinks = document.querySelector('.main-header .main-nav');
+        const aiModal = document.getElementById('ai-modal');
+        const aiModalBody = document.getElementById('ai-modal-body');
+        const aiModalClose = document.querySelector('.modal-close');
         
         // --- 状态变量 ---
         let allProducts = [];
         let scrollPosition = 0;
 
-        /**
-         * 创建一个产品卡片的HTML结构
-         * @param {object} product - 从Contentful获取的单个产品对象
-         * @returns {HTMLElement} - 代表产品卡片的 article 元素
-         */
         function createProductCard(product) {
-            const imageUrl = product.fields.mainImage?.fields?.file?.url ? `https:${product.fields.mainImage.fields.file.url}` : 'https://placehold.co/600x500/E5E5E5/333333?text=No+Image';
+            const coverImage = product.fields.productGallery?.[0] || product.fields.mainImage;
+            const imageUrl = coverImage?.fields?.file?.url ? `https:${coverImage.fields.file.url}` : 'https://placehold.co/600x500/E5E5E5/333333?text=No+Image';
             const card = document.createElement('article');
             card.className = 'product-card';
             card.innerHTML = `
@@ -135,24 +152,48 @@
             return card;
         }
 
-        /**
-         * 根据产品ID，渲染产品详情页的内容
-         * @param {string} productId - 要显示详情的产品ID
-         */
         function renderProductDetail(productId) {
             const product = allProducts.find(p => p.sys.id === productId);
             if (!product) {
-                window.location.hash = ''; // 如果找不到产品，安全返回首页
+                window.location.hash = '';
                 return;
             }
             
-            const imageUrl = product.fields.mainImage?.fields?.file?.url ? `https:${product.fields.mainImage.fields.file.url}` : 'https://placehold.co/800x800/E5E5E5/333333?text=No+Image';
-            const specsHtml = product.fields.specifications && window.richTextHtmlRenderer ? window.richTextHtmlRenderer.documentToHtmlString(product.fields.specifications) : '<p>暂无规格信息</p>';
+            const galleryImages = product.fields.productGallery || (product.fields.mainImage ? [product.fields.mainImage] : []);
+            let galleryHtml = '<p>暂无图片</p>';
+            if (galleryImages.length > 0) {
+                const mainImageUrl = `https:${galleryImages[0].fields.file.url}`;
+                const thumbnailsHtml = galleryImages.map((img, index) => `
+                    <img src="https:${img.fields.file.url}?w=100&h=100&fit=thumb" alt="缩略图 ${index + 1}" class="gallery-thumbnail ${index === 0 ? 'active' : ''}" data-index="${index}">
+                `).join('');
+
+                galleryHtml = `
+                    <div class="product-gallery">
+                        <img src="${mainImageUrl}" alt="${product.fields.productName}" class="gallery-main-image">
+                        ${galleryImages.length > 1 ? `
+                        <div class="gallery-controls">
+                            <button class="gallery-control prev" aria-label="上一张"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+                            <button class="gallery-control next" aria-label="下一张"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+                        </div>` : ''}
+                    </div>
+                    ${galleryImages.length > 1 ? `<div class="gallery-thumbnails">${thumbnailsHtml}</div>` : ''}
+                `;
+            }
+
+            const richTextOptions = {
+                renderNode: {
+                    'embedded-asset-block': (node) => {
+                        const { file } = node.data.target.fields;
+                        return `<img src="https:${file.url}" alt="${file.fileName}" style="max-width:100%;height:auto;border-radius:8px;margin:20px 0;"/>`;
+                    }
+                }
+            };
+            const specsHtml = product.fields.specifications && window.richTextHtmlRenderer ? window.richTextHtmlRenderer.documentToHtmlString(product.fields.specifications, richTextOptions) : '<p>暂无规格信息</p>';
 
             detailContent.innerHTML = `
                 <div class="product-detail-layout">
-                    <div class="product-image-gallery">
-                        <img src="${imageUrl}" alt="${product.fields.productName || '产品图片'}">
+                    <div class="product-image-gallery-container">
+                        ${galleryHtml}
                     </div>
                     <div class="product-info">
                         <h1>${product.fields.productName || '未命名产品'}</h1>
@@ -161,11 +202,15 @@
                             <p>${product.fields.description || '暂无描述'}</p>
                         </div>
                         <div class="product-specs">
-                            <h3>产品规格</h3>
+                            <h3>图文详情</h3>
                             ${specsHtml}
                         </div>
                         <div class="product-actions">
                              <button class="btn btn-secondary" id="back-to-list-btn">返回列表</button>
+                             <button class="btn btn-primary" id="ai-assistant-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2s2-.9 2-2V5c0-1.1-.9-2-2-2zM5 12c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2s2-.9 2-2v-2c0-1.1-.9-2-2-2zM19 12c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2s2-.9 2-2v-2c0-1.1-.9-2-2-2z"/></svg>
+                                AI送礼助手
+                             </button>
                              <div class="share-icon-wrapper" title="分享此产品">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
                              </div>
@@ -174,86 +219,140 @@
                 </div>
             `;
             
+            let currentImageIndex = 0;
+            const mainImage = detailContent.querySelector('.gallery-main-image');
+            const thumbnails = detailContent.querySelectorAll('.gallery-thumbnail');
+            
+            function updateGallery(index) {
+                mainImage.src = `https:${galleryImages[index].fields.file.url}`;
+                thumbnails.forEach((thumb, i) => {
+                    thumb.classList.toggle('active', i === index);
+                });
+                currentImageIndex = index;
+            }
+
+            detailContent.querySelector('.next')?.addEventListener('click', () => {
+                const nextIndex = (currentImageIndex + 1) % galleryImages.length;
+                updateGallery(nextIndex);
+            });
+
+            detailContent.querySelector('.prev')?.addEventListener('click', () => {
+                const prevIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+                updateGallery(prevIndex);
+            });
+
+            thumbnails.forEach(thumb => {
+                thumb.addEventListener('click', () => {
+                    updateGallery(parseInt(thumb.dataset.index));
+                });
+            });
+
             document.getElementById('back-to-list-btn').addEventListener('click', () => { window.location.hash = ''; });
             document.querySelector('.share-icon-wrapper').addEventListener('click', () => copyToClipboard(window.location.href));
+            document.getElementById('ai-assistant-btn').addEventListener('click', () => getGiftIdeas(product));
         }
         
-        /**
-         * 复制文本到剪贴板，提供降级方案以增强兼容性
-         * @param {string} text - 需要复制的文本
-         */
-        function copyToClipboard(text) {
-            if (navigator.clipboard && window.isSecureContext) {
-                navigator.clipboard.writeText(text)
-                    .then(() => showToast('链接已复制!'))
-                    .catch(() => fallbackCopy(text));
-            } else {
-                fallbackCopy(text);
+        async function getGiftIdeas(product) {
+            aiModal.classList.add('active');
+            document.body.classList.add('modal-open');
+            aiModalBody.innerHTML = `
+                <div class="ai-loader">
+                    <div class="spinner"></div>
+                    <p>AI正在为您生成送礼灵感...</p>
+                </div>
+            `;
+
+            const prompt = `你是一位专业的文创产品送礼顾问。请根据以下产品信息，用中文为我生成一份送礼建议。
+            产品名称：${product.fields.productName}
+            产品描述：${product.fields.description}
+            
+            请从三个方面给出建议：
+            1. **适用人群**：这款产品适合送给哪些类型的人？
+            2. **赠送场景**：在什么样的场合或节日送出最合适？
+            3. **祝福寄语**：写一句简短而真诚的祝福语，可以写在贺卡上。
+
+            请用清晰的、带有标题的格式返回内容。`;
+
+            try {
+                let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
+                const payload = { contents: chatHistory };
+                const apiKey = ""; // Canvas will provide this
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+                
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    const errorBody = await response.text();
+                    console.error("API Error Response:", errorBody);
+                    throw new Error(`API request failed with status ${response.status}`);
+                }
+
+                const result = await response.json();
+                
+                let text = '抱歉，AI暂时无法提供建议。';
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    text = result.candidates[0].content.parts[0].text;
+                }
+                
+                const formattedText = text
+                    .replace(/\*\*(.*?)\*\*/g, '<h4>$1</h4>') // 将 **Bold** 转换为 <h4>
+                    .replace(/\n\s*(\d\.\s)/g, '</p><p>') // 移除数字列表
+                    .replace(/\n/g, '<br>');
+
+
+                aiModalBody.innerHTML = `<div class="ai-suggestion">${formattedText}</div>`;
+
+            } catch (error) {
+                console.error("Gemini API call failed:", error);
+                aiModalBody.innerHTML = `<p>抱歉，AI暂时无法连接，请稍后再试。</p>`;
             }
         }
 
-        /**
-         * 复制功能的后备方案，用于兼容旧版或非安全环境的浏览器
-         * @param {string} text - 需要复制的文本
-         */
+        function copyToClipboard(text) {
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(() => showToast('链接已复制!')).catch(() => fallbackCopy(text));
+            } else { fallbackCopy(text); }
+        }
+
         function fallbackCopy(text) {
             const textArea = document.createElement('textarea');
             textArea.value = text;
-            textArea.style.position = 'absolute';
-            textArea.style.left = '-9999px';
+            textArea.style.position = 'absolute'; textArea.style.left = '-9999px';
             document.body.appendChild(textArea);
             textArea.select();
-            try {
-                document.execCommand('copy');
-                showToast('链接已复制!');
-            } catch (err) {
-                showToast('复制失败，请手动复制');
-            }
+            try { document.execCommand('copy'); showToast('链接已复制!'); } catch (err) { showToast('复制失败，请手动复制'); }
             document.body.removeChild(textArea);
         }
 
-        /**
-         * 显示主视图（产品列表等）并恢复滚动位置
-         */
         function showMainView() {
             detailView.classList.add('hidden');
             mainView.classList.remove('hidden');
             window.scrollTo({ top: scrollPosition, behavior: 'auto' });
         }
 
-        /**
-         * 核心路由函数，根据URL的哈希值决定显示哪个视图
-         */
         function handleRouting() {
-            if (mobileNav.classList.contains('active')) {
-                toggleMenu(); // 任何路由变化都先关闭移动菜单
-            }
+            if (mobileNav.classList.contains('active')) { toggleMenu(); }
             const hash = window.location.hash;
             if (hash.startsWith('#product/')) {
                 mainView.classList.add('hidden');
                 detailView.classList.remove('hidden');
                 const productId = hash.substring(9);
                 renderProductDetail(productId);
-            } else {
-                showMainView();
-            }
+            } else { showMainView(); }
         }
 
-        /**
-         * 显示一个短暂的浮动提示消息
-         * @param {string} message - 要显示的消息文本
-         */
         function showToast(message) {
             toast.textContent = message;
             toast.style.opacity = '1';
-            setTimeout(() => {
-                toast.style.opacity = '0';
-            }, 2000);
+            setTimeout(() => { toast.style.opacity = '0'; }, 2000);
         }
 
-        /**
-         * 从Contentful加载所有产品数据，并进行渲染
-         */
         async function loadAllProducts() {
             try {
                 const response = await client.getEntries({ content_type: 'product' });
@@ -276,17 +375,12 @@
                     }
                 });
                 
-                allGrid.innerHTML = '';
-                allGrid.appendChild(allFragment);
-                
-                featuredGrid.innerHTML = '';
-                featuredGrid.appendChild(featuredFragment);
+                allGrid.innerHTML = ''; allGrid.appendChild(allFragment);
+                featuredGrid.innerHTML = ''; featuredGrid.appendChild(featuredFragment);
 
                 const featuredSection = document.getElementById('featured-products');
                 featuredSection.style.display = featuredCount > 0 ? 'block' : 'none';
-
                 loader.style.display = 'none';
-                
             } catch (error) {
                 console.error('获取Contentful数据失败:', error);
                 loader.textContent = '数据加载失败，请检查API密钥或Contentful配置。';
@@ -294,37 +388,24 @@
             }
         }
         
-        /**
-         * 切换移动端汉堡菜单的显示状态
-         */
         function toggleMenu() {
             hamburgerMenu.classList.toggle('active');
             mobileNav.classList.toggle('active');
             document.body.classList.toggle('mobile-nav-active');
         }
 
-        /**
-         * 平滑滚动到页面指定ID的元素
-         * @param {string} targetId - 目标元素的ID
-         */
         function smoothScrollTo(targetId) {
             const targetElement = document.getElementById(targetId);
             if (targetElement) {
                 const headerOffset = document.querySelector('.main-header').offsetHeight;
                 const elementPosition = targetElement.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                
                 window.scrollTo({ top: offsetPosition, behavior: "smooth" });
             }
         }
 
-        /**
-         * 应用初始化函数
-         */
         async function initializeApp() {
-            // 绑定UI事件
             hamburgerMenu.addEventListener('click', toggleMenu);
-            
             desktopNavLinks.addEventListener('click', function(e) {
                 if (e.target.tagName === 'A' && e.target.getAttribute('href').startsWith('#')) {
                     e.preventDefault();
@@ -333,42 +414,44 @@
                     smoothScrollTo(targetId);
                 }
             });
-
             document.querySelector('.logo').addEventListener('click', (e) => {
                 e.preventDefault();
                 window.location.hash = '';
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
-
             document.querySelector('.hero .btn').addEventListener('click', (e) => {
                  e.preventDefault();
                  window.location.hash = '';
                  smoothScrollTo('all-products');
             });
-            
             mobileNav.querySelectorAll('.main-nav a').forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
                     const targetId = link.getAttribute('href').substring(1);
-                    
                     mobileNav.addEventListener('transitionend', function onTransitionEnd() {
                         smoothScrollTo(targetId);
                         mobileNav.removeEventListener('transitionend', onTransitionEnd);
                     }, { once: true });
-
                     toggleMenu();
                 });
             });
+            
+            aiModalClose.addEventListener('click', () => {
+                aiModal.classList.remove('active');
+                document.body.classList.remove('modal-open');
+            });
+            aiModal.addEventListener('click', (e) => {
+                if (e.target === aiModal) {
+                    aiModal.classList.remove('active');
+                    document.body.classList.remove('modal-open');
+                }
+            });
 
-            // 监听路由变化
             window.addEventListener('hashchange', handleRouting);
-
-            // 加载数据并根据初始URL渲染
             await loadAllProducts();
             handleRouting();
         }
 
-        // 启动应用
         initializeApp();
     });
     </script>
